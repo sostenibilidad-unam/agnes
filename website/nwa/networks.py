@@ -83,7 +83,8 @@ def agency_ego_alter_action(queryset):
         g.add_node(str(e.person), type='person',
                    sector=str(e.person.sector),
                    ego=e.person.ego)
-        g.add_node(str(e.action), type='action')
+        g.add_node(str(e.action), type='action',
+                   category=str(e.action.category))
 
         for alter in e.people.all():
             g.add_node(str(alter), type='alter',
