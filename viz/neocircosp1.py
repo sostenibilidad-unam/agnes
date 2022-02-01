@@ -1,4 +1,14 @@
 import networkx as nx
+import numpy as np
+
+def stats(g):
+    print('nodes', len(g.nodes))
+    print('edges', len(g.edges))
+    print('density', nx.density(g))
+    K=np.array([k[1] for k in nx.degree(g)])
+    print('avg. number of neighbors', K.mean())
+    nx.out_degree_centrality(g)
+    
 
 g = nx.DiGraph()
 
@@ -29,8 +39,9 @@ g.add_edge('Ac-19', 'Research_water_quality')
 g.add_edge('Ac-19', 'Research_water_quality')
 g.add_edge('Ac-01','Research_water_quality')
 
+stats(g)
 df = nx.to_pandas_adjacency(g)
-df.to_csv('t0.csv')
+df.to_csv('t0_nx.csv')
 
 
 
@@ -67,8 +78,9 @@ g.add_edge('Ch-10', 'Alliance_farmers_market_certification')
 g.add_edge('Cs-16', 'Alliance_advise_on_irregular_settlements_involvement')
 g.add_edge('Ch-14', 'Alliance_advise_on_irregular_settlements_involvement')
 
+stats(g)
 df = nx.to_pandas_adjacency(g)
-df.to_csv('t1.csv')
+df.to_csv('t1_nx.csv')
 
 
 
