@@ -13,7 +13,9 @@ decreases, which means that although there are more nodes, there
 aren't many new connections. This is also why network density
 decreases.
 
-However, the out degree centrality of certain nodes has increased.
+The out-degree centrality for a node is the fraction of nodes its
+outgoing edges are connected to. Decrease in out-degree centrality for
+some source nodes may be explained by an increase in connections.
 
 
 T0
